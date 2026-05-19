@@ -1,296 +1,127 @@
-# 🌳 ÁRBOL DE CARPETAS - COPIA Y PEGA PARA LA JUNTA
+# SyncUT - Árbol de Carpetas para Junta
 
-## VERSIÓN SIMPLE (Mostrar primero)
+## Vista simple
 
-```
-📦 SyncUT
- ┣ 📁 apps/web/app/
- ┃ ┣ 📁 (auth) ..................... Squad 2 🔐
- ┃ ┣ 📁 (citas) .................... Squad 3 📅
- ┃ ┣ 📁 (notificaciones) ........... Squad 4 🔔
- ┃ ┣ 📁 (justificaciones) .......... Squad 1 📄
- ┃ └ 📁 (dashboard) ................ STAFF 🏠
- ┣ 📁 packages/ .................... Código Compartido
- ┣ 📁 supabase/ .................... BD Schema
- └ 📁 docs/ ........................ Documentación
-```
-
----
-
-## VERSIÓN DETALLADA (Si piden más info)
-
-```
-📦 SyncUT
- ┣ 📄 .env.local ................... Variables de entorno
- ┣ 📄 .github/ ..................... CI/CD Workflows
- ┣ 
- ┣ 📁 apps/
- ┃ ┗ 📁 web/ ...................... Aplicación Next.js
- ┃ ┃ ┣ 📁 app/
- ┃ ┃ ┃ ┣ 📁 (auth) ............... Squad 2 - AUTENTICACIÓN
- ┃ ┃ ┃ ┃ ┣ 📁 login/
- ┃ ┃ ┃ ┃ ┃ ┗ page.tsx ........... Página login
- ┃ ┃ ┃ ┃ ┣ 📁 signup/
- ┃ ┃ ┃ ┃ ┃ ┗ page.tsx ........... Página registro
- ┃ ┃ ┃ ┃ ┣ 📁 profile/
- ┃ ┃ ┃ ┃ ┃ ┗ page.tsx ........... Página perfil
- ┃ ┃ ┃ ┃ ┣ 📁 components/ ....... Componentes
- ┃ ┃ ┃ ┃ ┣ 📁 hooks/ ............ Hooks personalizados
- ┃ ┃ ┃ ┃ ┗ 📁 types/ ............ Tipos TypeScript
- ┃ ┃ ┃ ┃
- ┃ ┃ ┃ ┣ 📁 (citas) ............ Squad 3 - AGENDAMIENTO
- ┃ ┃ ┃ ┃ ┣ page.tsx ........... Página principal
- ┃ ┃ ┃ ┃ ┣ 📁 components/
- ┃ ┃ ┃ ┃ ┃ ┣ CitasForm.tsx ..... Formulario
- ┃ ┃ ┃ ┃ ┃ ┣ CitasCalendar.tsx . Calendario
- ┃ ┃ ┃ ┃ ┃ ┣ CitasList.tsx ..... Listar
- ┃ ┃ ┃ ┃ ┃ ┗ CitasDetail.tsx ... Detalle
- ┃ ┃ ┃ ┃ ┣ 📁 hooks/
- ┃ ┃ ┃ ┃ ┃ ┗ useCitas.ts ....... Hook
- ┃ ┃ ┃ ┃ ┗ 📁 types/
- ┃ ┃ ┃ ┃ ┃ ┗ citas.ts ......... Tipos
- ┃ ┃ ┃ ┃
- ┃ ┃ ┃ ┣ 📁 (notificaciones) . Squad 4 - NOTIFICACIONES
- ┃ ┃ ┃ ┃ ┣ page.tsx ........... Centro notificaciones
- ┃ ┃ ┃ ┃ ┣ 📁 components/
- ┃ ┃ ┃ ┃ ┃ ┣ NotificationCenter.tsx
- ┃ ┃ ┃ ┃ ┃ ┣ NotificationItem.tsx
- ┃ ┃ ┃ ┃ ┃ ┣ NotificationList.tsx
- ┃ ┃ ┃ ┃ ┃ ┗ NotificationSettings.tsx
- ┃ ┃ ┃ ┃ ┣ 📁 hooks/
- ┃ ┃ ┃ ┃ ┃ ┗ useNotifications.ts
- ┃ ┃ ┃ ┃ ┣ 📁 services/
- ┃ ┃ ┃ ┃ ┃ ┣ emailService.ts ... Resend API
- ┃ ┃ ┃ ┃ ┃ ┣ notificationQueue.ts
- ┃ ┃ ┃ ┃ ┃ ┗ webhooks.ts ....... Webhooks
- ┃ ┃ ┃ ┃ ┗ 📁 types/
- ┃ ┃ ┃ ┃ ┃ ┗ notifications.ts
- ┃ ┃ ┃ ┃
- ┃ ┃ ┃ ┣ 📁 (justificaciones) Squad 1 - DOCUMENTOS
- ┃ ┃ ┃ ┃ ┣ page.tsx ........... Página principal
- ┃ ┃ ┃ ┃ ┣ 📁 components/
- ┃ ┃ ┃ ┃ ┃ ┣ JustificacionesForm.tsx
- ┃ ┃ ┃ ┃ ┃ ┣ DocumentUpload.tsx
- ┃ ┃ ┃ ┃ ┃ ┣ JustificacionesList.tsx
- ┃ ┃ ┃ ┃ ┃ ┗ StateTimeline.tsx
- ┃ ┃ ┃ ┃ ┣ 📁 hooks/
- ┃ ┃ ┃ ┃ ┃ ┣ useJustificaciones.ts
- ┃ ┃ ┃ ┃ ┃ ┗ useDocumentUpload.ts
- ┃ ┃ ┃ ┃ ┣ 📁 services/
- ┃ ┃ ┃ ┃ ┃ ┣ storageService.ts
- ┃ ┃ ┃ ┃ ┃ ┗ justificacionService.ts
- ┃ ┃ ┃ ┃ ┗ 📁 types/
- ┃ ┃ ┃ ┃ ┃ ┗ justificaciones.ts
- ┃ ┃ ┃ ┃
- ┃ ┃ ┃ └ 📁 (dashboard) ........ STAFF - DASHBOARD
- ┃ ┃ ┃ ┃ ┣ page.tsx ........... Dashboard principal
- ┃ ┃ ┃ ┃ ┣ 📁 components/
- ┃ ┃ ┃ ┃ ┃ ┣ DashboardStudent.tsx
- ┃ ┃ ┃ ┃ ┃ ┣ DashboardTeacher.tsx
- ┃ ┃ ┃ ┃ ┃ ┣ DashboardAdmin.tsx
- ┃ ┃ ┃ ┃ ┃ ┣ QuickStats.tsx
- ┃ ┃ ┃ ┃ ┃ ┣ ModulesGrid.tsx
- ┃ ┃ ┃ ┃ ┃ ┗ ActivityFeed.tsx
- ┃ ┃ ┃ ┃ ┣ 📁 hooks/
- ┃ ┃ ┃ ┃ ┃ ┗ useDashboard.ts
- ┃ ┃ ┃ ┃ ┗ 📁 types/
- ┃ ┃ ┃ ┃ ┃ ┗ dashboard.ts
- ┃ ┃ ┃
- ┃ ┃ ┣ 📁 components/ ......... UI Compartida
- ┃ ┃ ┃ ┣ 📁 ui/
- ┃ ┃ ┃ ┃ ┣ button.tsx
- ┃ ┃ ┃ ┃ ┣ card.tsx
- ┃ ┃ ┃ ┃ ┣ modal.tsx
- ┃ ┃ ┃ ┃ ┣ form.tsx
- ┃ ┃ ┃ ┃ ┗ ... (Shadcn UI)
- ┃ ┃ ┃ └ 📁 modules/
- ┃ ┃ ┃ ┃ ┣ 📁 auth/
- ┃ ┃ ┃ ┃ ┣ 📁 citas/
- ┃ ┃ ┃ ┃ ┣ 📁 notificaciones/
- ┃ ┃ ┃ ┃ ┗ 📁 justificaciones/
- ┃ ┃ ┃
- ┃ ┃ ┣ 📁 lib/ ................ Utilidades
- ┃ ┃ ┃ ┣ utils.ts
- ┃ ┃ ┃ ┣ auth.ts
- ┃ ┃ ┃ ┗ db.ts
- ┃ ┃ ┃
- ┃ ┃ ┗ 📁 public/ ............ Assets (logos, imágenes)
- ┃
- ┣ 📁 packages/ ............... Código Compartido
- ┃ ┣ 📁 sdk/ ................. Cliente Supabase
- ┃ ┃ ┣ 📁 src/
- ┃ ┃ ┃ ┣ client.ts ........ createSupabaseBrowserClient()
- ┃ ┃ ┃ ┗ types.ts ........ Tipos SDK
- ┃ ┃ ┗ package.json
- ┃ ┃
- ┃ ┣ 📁 types/ .............. Tipos Auto-generados
- ┃ ┃ ┣ 📁 src/
- ┃ ┃ ┃ ┗ database.types.ts ← Auto-generada por Squad 2
- ┃ ┃ ┗ package.json
- ┃ ┃
- ┃ ┣ 📁 ui/ ................. Componentes UI
- ┃ ┃ ┣ 📁 src/
- ┃ ┃ ┗ package.json
- ┃ ┃
- ┃ ┣ 📁 shared/ ............. Validadores + Utilidades
- ┃ ┃ ┣ 📁 src/
- ┃ ┃ ┃ ┣ validators.ts
- ┃ ┃ ┃ ┣ constants.ts
- ┃ ┃ ┃ ┗ utils.ts
- ┃ ┃ ┗ package.json
- ┃ ┃
- ┃ ┗ 📁 config/ ............. Configuraciones
- ┃ ┃ ┣ 📁 src/
- ┃ ┃ ┗ package.json
- ┃
- ┣ 📁 supabase/ ............ Base de Datos
- ┃ ┣ 📁 migrations/
- ┃ ┃ ┣ 20240516000001_init_schemas.sql ← BD Schema
- ┃ ┃ ┃ ┣ Crea: profiles
- ┃ ┃ ┃ ┣ Crea: role_permissions
- ┃ ┃ ┃ ┣ Crea: audit_logs
- ┃ ┃ ┃ ┣ Crea: session_tokens
- ┃ ┃ ┃ ┗ Crea: 7 índices + RLS + 5 policies
- ┃ ┃ ┗
- ┃ ┗ 📁 tests/
- ┃
- ┣ 📁 docs/ ................ Documentación
- ┃ ┣ 📁 squad-1/
- ┃ ┣ 📁 squad-2/
- ┃ ┣ 📁 squad-3/
- ┃ ┗ 📁 squad-4/
- ┃
- ┣ 📁 scripts/ ............ Scripts Útiles
- ┃
- ┣ 📄 package.json ......... Workspace config
- ┣ 📄 pnpm-lock.yaml ...... Lock file
- ┣ 📄 pnpm-workspace.yaml . Monorepo config
- ┣ 📄 turbo.json ......... Build cache config
- ┣ 📄 tsconfig.json ...... TypeScript config
- ┣ 📄 .gitignore ......... Git ignore
- ┣ 📄 .env.local ......... Variables (CON KEYS) ✅
- ┗ 📄 README.md ......... Proyecto README
+```text
+SyncUT/
+├── apps/web/app/
+│   ├── (auth)            Squad 2 - Autenticación y auditoría
+│   ├── (citas)           Squad 3 - Citas
+│   ├── (justificaciones) Squad 1 - Justificaciones
+│   ├── (notificaciones)  Squad 4 - Notificaciones
+│   └── (dashboard)       Staff - Dashboard compartido
+├── packages/             Código compartido
+├── supabase/             Base de datos y tests
+├── docs/                 Documentación por módulo
+└── scripts/              Automatización y utilidades
 ```
 
----
+## Vista detallada
 
-## VERSIÓN PARA CADA SQUAD
-
-### Squad 2 (Autenticación)
-```
-TÚ PROGRAMAS AQUÍ:
-📁 apps/web/app/(auth)/
-
-CARPETAS PRINCIPALES:
-├── login/page.tsx
-├── signup/page.tsx  
-├── profile/page.tsx
-├── components/
-├── hooks/
-└── types/
-
-Tu README:
-📄 apps/web/app/(auth)/README.md
-```
-
-### Squad 3 (Citas)
-```
-TÚ PROGRAMAS AQUÍ:
-📁 apps/web/app/(citas)/
-
-CARPETAS PRINCIPALES:
-├── page.tsx
-├── components/
-├── hooks/
-└── types/
-
-Tu README:
-📄 apps/web/app/(citas)/README.md
-```
-
-### Squad 4 (Notificaciones)
-```
-TÚ PROGRAMAS AQUÍ:
-📁 apps/web/app/(notificaciones)/
-
-CARPETAS PRINCIPALES:
-├── page.tsx
-├── components/
-├── hooks/
-├── services/
-└── types/
-
-Tu README:
-📄 apps/web/app/(notificaciones)/README.md
-```
-
-### Squad 1 (Justificaciones)
-```
-TÚ PROGRAMAS AQUÍ:
-📁 apps/web/app/(justificaciones)/
-
-CARPETAS PRINCIPALES:
-├── page.tsx
-├── components/
-├── hooks/
-├── services/
-└── types/
-
-Tu README:
-📄 apps/web/app/(justificaciones)/README.md
+```text
+SyncUT/
+├── apps/
+│   └── web/
+│       ├── app/
+│       │   ├── (auth)/
+│       │   │   ├── login/page.tsx
+│       │   │   ├── signup/page.tsx
+│       │   │   └── profile/page.tsx
+│       │   ├── (citas)/
+│       │   │   ├── page.tsx
+│       │   │   ├── components/
+│       │   │   ├── hooks/
+│       │   │   └── types/
+│       │   ├── (justificaciones)/
+│       │   │   ├── page.tsx
+│       │   │   ├── components/
+│       │   │   ├── hooks/
+│       │   │   ├── services/
+│       │   │   └── types/
+│       │   ├── (notificaciones)/
+│       │   │   ├── page.tsx
+│       │   │   ├── components/
+│       │   │   ├── hooks/
+│       │   │   ├── services/
+│       │   │   └── types/
+│       │   └── (dashboard)/
+│       │       ├── page.tsx
+│       │       ├── components/
+│       │       ├── hooks/
+│       │       └── types/
+│       ├── components/
+│       │   ├── ui/
+│       │   └── modules/
+│       ├── lib/
+│       └── public/
+├── packages/
+│   ├── config/
+│   ├── sdk/
+│   │   └── src/
+│   ├── shared/
+│   │   └── src/
+│   ├── types/
+│   │   └── src/
+│   └── ui/
+├── supabase/
+│   ├── migrations/
+│   └── tests/
+├── docs/
+│   ├── GOOGLE_STITCH_PROMPT.md
+│   ├── GOOGLE_STITCH_PROMPT_CORE.md
+│   ├── GOOGLE_STITCH_PROMPT_MODULE_1_JUSTIFICATIONS.md
+│   ├── GOOGLE_STITCH_PROMPT_MODULE_2_AUTHENTICATION_AUDIT.md
+│   ├── GOOGLE_STITCH_PROMPT_MODULE_3_APPOINTMENTS.md
+│   ├── GOOGLE_STITCH_PROMPT_MODULE_4_NOTIFICATIONS.md
+│   ├── GOOGLE_STITCH_PROMPT_MODULE_5_STAFF_DASHBOARD.md
+│   ├── squad-1-justificaciones/
+│   ├── squad-2-auditoría/
+│   ├── squad-3-citas/
+│   ├── squad-4-notificaciones/
+│   └── staff-dashboard/
+└── scripts/
 ```
 
-### STAFF (Dashboard)
-```
-TÚ PROGRAMAS AQUÍ:
-📁 apps/web/app/(dashboard)/
+## Dónde trabaja cada squad
 
-CARPETAS PRINCIPALES:
-├── page.tsx
-├── components/
-├── hooks/
-└── types/
+### Squad 2 - Autenticación y auditoría
 
-Tu README:
-📄 apps/web/app/(dashboard)/README.md
-```
+Trabaja en:
+- [apps/web/app/(auth)](apps/web/app/%28auth%29)
+- [apps/web/middleware.ts](apps/web/middleware.ts)
+- [supabase/migrations](supabase/migrations)
+- [packages/sdk](packages/sdk)
+- [packages/types](packages/types)
 
----
+### Squad 3 - Citas
 
-## 🎯 RESUMEN EN EMOJIS
+Trabaja en:
+- [apps/web/app/(citas)](apps/web/app/%28citas%29)
+- [apps/web/components/modules](apps/web/components/modules)
 
-```
-📦 SyncUT
- 🔐 (auth) ................... Squad 2
- 📅 (citas) .................. Squad 3
- 🔔 (notificaciones) ......... Squad 4
- 📄 (justificaciones) ........ Squad 1
- 🏠 (dashboard) .............. STAFF
+### Squad 4 - Notificaciones
 
-Todos usan:
- 📚 packages/sdk
- 📋 packages/types
- 🎨 components/ui
- ⚙️ packages/shared
- 🗄️ supabase/migrations
-```
+Trabaja en:
+- [apps/web/app/(notificaciones)](apps/web/app/%28notificaciones%29)
+- [packages/shared](packages/shared)
+- [supabase/migrations](supabase/migrations)
 
----
+### Squad 1 - Justificaciones
 
-## COMANDO PARA VER EN REAL
+Trabaja en:
+- [apps/web/app/(justificaciones)](apps/web/app/%28justificaciones%29)
+- [supabase/migrations](supabase/migrations)
+- [supabase/tests](supabase/tests)
 
-```bash
-# En terminal, desde SyncUT:
-tree /F
-# O
-dir /S /B
-# O
-ls -la apps/web/app/
-```
+### Staff - Dashboard compartido
 
----
+Trabaja en:
+- [apps/web/app/(dashboard)](apps/web/app/%28dashboard%29)
+- [apps/web/components/modules](apps/web/components/modules)
 
-**Creado:** 17 Mayo 2026  
-**Para:** Mostrar en la junta  
-**Formato:** Copy-paste ready
+## Regla de uso para la junta
 
+1. Mostrar primero la vista simple.
+2. Después mostrar la vista detallada solo si piden más profundidad.
+3. Usar los docs de Stitch por módulo como soporte visual.
+4. No mezclar rutas antiguas con las rutas reales del repositorio.
