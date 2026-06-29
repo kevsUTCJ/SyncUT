@@ -92,7 +92,7 @@ export default function IncidenciasPage() {
       <section className="mx-auto max-w-6xl space-y-6">
         <header className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
           <p className="text-xs font-semibold uppercase tracking-wider text-amber-600">Beta funcional - Squad 5</p>
-          <h1 className="mt-2 text-3xl font-black text-slate-900">Buzon de Incidencias</h1>
+          <h1 className="mt-2 text-3xl font-black text-slate-900">Buzon de Incidencia</h1>
           <p className="mt-2 text-sm text-slate-600">Gestion de reportes con semaforo de prioridad y seguimiento de estado.</p>
           <p className="mt-2 text-xs text-slate-500">Los reportes se guardan localmente en esta vista beta.</p>
           <div className="mt-5 flex flex-wrap gap-3">
