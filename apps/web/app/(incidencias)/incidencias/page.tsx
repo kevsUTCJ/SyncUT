@@ -94,6 +94,7 @@ export default function IncidenciasPage() {
           <p className="text-xs font-semibold uppercase tracking-wider text-amber-600">Beta funcional - Squad 5</p>
           <h1 className="mt-2 text-3xl font-black text-slate-900">Buzon de Incidencias</h1>
           <p className="mt-2 text-sm text-slate-600">Gestion de reportes con semaforo de prioridad y seguimiento de estado.</p>
+          <p className="mt-2 text-xs text-slate-500">Los reportes se guardan localmente en esta vista beta.</p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/" className="rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white">Inicio</Link>
             <Link href="/notificaciones" className="rounded-xl border border-slate-300 px-4 py-2 text-xs font-semibold text-slate-700">Notificaciones</Link>
@@ -135,7 +136,7 @@ export default function IncidenciasPage() {
             </div>
             {message ? <p className="mt-3 text-xs font-semibold text-amber-600">{message}</p> : null}
             <button type="submit" className="mt-4 w-full rounded-xl bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700">
-              Reportar incidencia
+              Enviar reporte
             </button>
           </form>
 
